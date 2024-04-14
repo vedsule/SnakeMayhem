@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SnakeMayhem</title>
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <script src="index.js"></script>
+        <script src="index1.js"></script>
+        <script src="index2.js"></script>
+
+  
+    </head>
+    <body>
+        <header>
+            <a href="#" class = "logo">SnakeMayhem</a>
+            <ul>
+                <li><a href="?level=190" id="b0" class="active" onclick="changeClass()">Easy</a></li>
+                <li><a href="?level=140" id="b2" class="!active" onclick="changeClass()">Medium</a></li>
+                <li><a href="?level=90" id="b3" class="!active" onclick="changeClass()">Hard</a></li>
+                <li><a href="?level=45" id="b4" class="!active" onclick="changeClass()">Nightmare</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">SNAKE MAYHEM</h2>
+            <a href="#sec" id="btn" >let's Play</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+
+
+        <div class="sec" id="sec">
+
+            <h2>Compete With Friends</h2>
+            <p> Can you beat the #1 ? lets go 1 V 1 and find out !!   <p> 
+            <button id="leaderboard"
+            style="background-color:#ffc801;
+            color:white;
+            text-decoration: none;
+            position: relative;
+            top:-50px;
+            left:450px;"
+            ><a href = "leaderboard.jsp">leaderboard</a></button>
+            <p id="selectmsg"> Select Player   : / </p>
+            <div id="gamescreen">
+                <button id="p1butt" class="pbutt" name= "player1" onclick="p1();"> Player I</button>
+                
+                
+                <canvas id="board"></canvas>
+                <button id="p2butt" class="pbutt" name= "player2" onclick="p2();"> Player II</button>
+                
+                
+                
+                <div id="info">
+                    <p id="p1info">Score : </p>
+                    <p id="p2info">Score : </p>
+                </div>
+
+                <div id="fillname">
+                    <form>
+                        <input type="text" id="p1name" placeholder="p1"><br>
+                        <input type="submit" id = "submitp1name">
+                    </form>
+                    <form id = "nameform2"style ="">
+                        <input type="text" id="p2name" placeholder="p2"><br>
+                        <input type="submit" id = "submitp2name">
+                    </form>
+                </div>
+
+            </div>    
+            <p style="position:relative; left:48%; top:50px">its a tie<p>
+        </div>  
+        
+                
+        <script>
+            let stars = document.getElementById("stars");
+            let moon = document.getElementById("moon");
+            let mountains_behind = document.getElementById("mountains_behind");
+            let mountains_front = document.getElementById("mountains_front");
+            let text = document.getElementById("text");
+            let btn = document.getElementById("btn");
+            
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value*0.25 + 'px';
+                moon.style.top = value*1.05 + 'px';
+                mountains_behind.style.top = value*0.5 + 'px';
+                //mountains_front.style.top = value*0.05 + 'px';
+                text.style.marginRight = value*3 + 'px';
+                text.style.marginTop = value*1.2 + 'px';
+                btn.style.marginTop = value*1.2 + 'px'; 
+
+            })
+        </script>
+    </body>
+    
+</html>
